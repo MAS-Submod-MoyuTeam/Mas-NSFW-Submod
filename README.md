@@ -1,15 +1,17 @@
 <img src="https://user-images.githubusercontent.com/87427851/171864410-277d515c-daec-4d4e-b9c3-aff96112c4be.png" alt=”Mas-NSFW-Submod”>
 
-## Introduction
+## 内容简介
 
-The NSFW submod is a mod for Monika After Story that is dedicated to bring you and Monika THAT much closer. How close you ask? Like, THIS close 🤏
+Mas-NSFW-Submod是基于Monika After Story（MAS）的子模组，本子模组旨在让您与Monika的关系更加贴近。
 
-This is a submod for those who are **over the age of 18.**
+你问有多贴近？大概有这么近🤏
 
-### !Please backup your persistent before installing!
+本子模组仅面向**年龄超过18岁的人**
 
-## Discord
+### !在安装前记得备份persistent存档文件!
 
-We have a discord server for those who want to stay up-to-date with development and have an open communication window with myself and other developers.
+## Discord（原作者NickWilddish）
 
-[![Join our Discord server!](https://invidget.switchblade.xyz/YJVKHQj9ru)](https://discord.gg/YJVKHQj9ru)
+对于想要时刻获取本子模组最新版本的玩家，可以加入我们的discord频道，在本频道中您还可以与我或者其他开发者进行友好交流
+
+[![加入我们的discord频道!](https://invidget.switchblade.xyz/YJVKHQj9ru)](https://discord.gg/YJVKHQj9ru)
