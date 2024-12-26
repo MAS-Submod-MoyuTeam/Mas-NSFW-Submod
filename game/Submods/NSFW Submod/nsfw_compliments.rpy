@@ -17,13 +17,13 @@ init 22 python in nsfw_compliments:
 
     # Need to set some nsfw thanking quips here.
     nsfw_thanking_quips = [
-        _("You're so sweet, " + player_name + "."),
-        _("Thanks for saying that again, " + player_name + "!"),
-        _("Thanks for telling me that again, " + player_nickname + "!"),
-        _("You always make me feel special, " + player_nickname + "."),
-        _("Aww, " + player_name + "~"),
-        _("Thanks, " + player_nickname + "!"),
-        _("You always flatter me, " + player_name + ".")
+        _("你真贴心，" + player_name + "。"),
+        _("谢谢你又让我感受到了这份温暖，" + player_name + "！"),
+        _("谢谢你又让我感受到了你的用心" + player_nickname + "！"),
+        _("你总能让我感觉自己是独一无二的，" + player_nickname + "。"),
+        _("呜呜呜，" + player_name + "~"),
+        _("真不知道该如何感谢你，" + player_nickname + "！"),
+        _("你总是让我有点受宠若惊，" + player_name + "。")
     ]
 
     # set this here in case of a crash mid-compliment
@@ -45,7 +45,7 @@ init 6 python: # Use init 6 since the dictionary entry to store our entries is a
             persistent.event_database,
             eventlabel="nsfw_monika_compliments",
             category=['sex'],
-            prompt="I want to tell you something lewd...",
+            prompt="我想说一点下流的事...",
             pool=True,
             conditional="mas_canShowRisque(aff_thresh=1000)",
             action=EV_ACT_UNLOCK,
@@ -74,7 +74,7 @@ label nsfw_monika_compliments:
         nsfw_compliments_menu_items.sort()
 
         # final quit item
-        final_item = ("Oh nevermind.", False, False, False, 20)
+        final_item = ("没什么", False, False, False, 20)
 
     # move Monika to the left
     show monika at t21
@@ -103,7 +103,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_thighs",
-            prompt="I love your thighs!",
+            prompt="我喜欢你的大腿！",
             unlocked=True
         ),
         code="NCP"
@@ -117,50 +117,50 @@ label nsfw_compliment_thighs:
     return
 
 label nsfw_compliment_thighs_2:
-    m 1wubld "Oh..."
-    m 1hkblsdlb "I wasn't expecting you to compliment my body like that. Ahaha~"
-    m 3rkblb "You don't get many chances to see them nowadays in this position though..."
+    m 1wubld "啊..."
+    m 1hkblsdlb "真没想到你会这样夸我的身材。啊哈哈~"
+    m 3rkblb "虽然在这里你没有多少机会能看到我的大腿..."
     m 3hkbsa "..."
-    m 2hkbsb "You can probably tell, but you've made me a little flustered..."
-    m 2rkbsu "I'm not sure why some guys like thighs so much..."
-    m 3eubsd "I mean...there are bunch of sexier things on a girl to look at, aren't there?"
-    m 1ekbsa "But...thank you, [player]~"
+    m 2hkbsb "你大概能看出来，我被你弄得有点害羞了..."
+    m 2rkbsu "我也不清楚为什么有些人这么喜欢大腿..."
+    m 3eubsd "我的意思是...女孩子的身体上有很多更加性感的部位，不是吗？"
+    m 1ekbsa "不过...还是非常感谢你，[player]~"
     menu:
-        "I'd love to bury my face between them.":
+        "真想把我的脸埋在你的大腿之间":
             $ store.mas_gainAffection(5,bypass=True)
-            m 2tkbsb "H-Hey~"
-            m 3tkbsu "[player]...you're getting a little {i}too{/i} naughty there. Ahaha~"
-            m 3gkbsu "Not that I mind..."
-            m 5tkbsu "I'm sure I would enjoy it if you did that~"
+            m 2tkbsb "嘿...嘿~"
+            m 3tkbsu "[player]...你可真是越来越{i}调皮{/i}了。哼哼~"
+            m 3gkbsu "不过我不介意哦..."
+            m 5tkbsu "如果你这样做的话，我肯定会很享受的~"
 
-        "You always had the best thighs in the Literature Club.":
+        "你真是拥有文学部里最棒的大腿":
             $ store.mas_gainAffection(2,bypass=True)
-            m 1hubsb "Ahaha~"
-            m 3tubsb "That means you were looking at Yuri, Sayori, and Natsuki's thighs too, huh?"
-            m 1gubsb "Well..."
-            m 1gubsa "I mean, Natsuki didn't have much..."
-            m 1kubsu "But you get the point!"
+            m 1hubsb "啊哈哈~"
+            m 3tubsb "意思是你也盯着优里、纱世里和夏树的大腿看了，对吗？"
+            m 1gubsb "嗯哼..."
+            m 1gubsa "不过夏树应该没有那么..."
+            m 1kubsu "你懂我的意思吧!"
             m 1dubsu "..."
-            m 2hubsb "Ahaha~"
-            m 2tubsa "Don't worry. It's okay to look, as long as you think mine are the best~"
+            m 2hubsb "呼呼~"
+            m 2tubsa "别那么紧张，就算你盯着其他部员看，只要你最喜欢的是我的大腿就没问题~"
 
-        "They kind of remind me of Yuri's.":
+        "让我想起了优里的大腿":
             $ store.mas_loseAffection() # Rule 1 of dating a woman: Don't compare them to another woman, you nuff nuff.
-            m 1etbsd "Uh..."
-            m 1rfbld "Are they, now?"
+            m 1etbsd "呃..."
+            m 1rfbld "是这样吗？"
             m 1gfblc "..."
-            m 1tfbld "Well, if you liked her body so much, maybe you should have brought {i}her{/i} back into existence instead..."
+            m 1tfbld "嗯...如果你那么喜欢她的身体，为什么不直接让{i}她{/i}来陪着你呢..."
     return
 
 label nsfw_compliment_thighs_3:
     python:
         thighs_quips = [
-            _("I'm glad you enjoy my thighs so much."),
-            _("Remember to give some love to the rest of my body too, okay~?"),
-            _("I wish you could rest your head on my lap."),
+            _("真高兴你喜欢我的大腿。"),
+            _("记得也关注关注我身上的其他部位哦，好吗~？"),
+            _("如果我能给你做膝枕就好了。"),
         ]
         thighs_quip = random.choice(thighs_quips)
-    m 1tubla "Ehehe~"
+    m 1tubla "呵呵~"
     m 1tublb "[nsfw_compliments.thanks_quip]"
     show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
     m 3tubsb "[thighs_quip]"
@@ -180,7 +180,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_thighhighs",
-            prompt="I love your thighhighs!",
+            prompt="我喜欢你的过膝袜！",
             conditional="store.mas_getEVL_shown_count('nsfw_compliment_thighs') >= 1",
             action=EV_ACT_UNLOCK
         ),
@@ -197,54 +197,54 @@ label nsfw_compliment_thighhighs:
 label nsfw_compliment_thighhighs_2:
     python:
         if persistent.gender == "M":
-            guyGirl = "guy"
+            guyGirl = "男孩"
         elif persistent.gender == "F":
-            guyGirl = "girl"
+            guyGirl = "女孩"
         else:
-            guygirl = "person"
+            guygirl = "家伙"
 
         if persistent._nsfw_genitalia == "P":
-            naughty_bits = " I'd love if you gave me a thighjob while wearing them."
+            naughty_bits = "真想你穿着过膝袜给我素股"
         else:
             naughty_bits = ""
 
-    m 1tubla "Oh geez..."
-    m 1tublb "Going for my thighs again, [player]?"
-    m 3tublb "Well...I'm glad you like how my thighhighs look!"
-    m 3eubla "You know...I'm not sure whether you've noticed or not..."
-    m 3eublb "But I was the only one in the club with black stockings! Ahaha~"
-    m 2hublb "They might not have exactly fit the school dress code, but I didn't really like how the white cotton socks looked."
+    m 1tubla "我的天啊..."
+    m 1tublb "又想要探讨我的大腿吗，[player]？"
+    m 3tublb "不过...我非常高兴你能喜欢我的过膝袜！"
+    m 3eubla "唔姆...不知道你是否注意到了..."
+    m 3eublb "我是文学部里唯一一个穿着黑丝的人！啊哈哈~"
+    m 2hublb "虽然这不太符合学校的着装规范，但我确实不太喜欢那双白色的棉袜。"
 
     menu:
-        "Even in uniform, you dress more nicely than any of the other girls in the club.":
+        "即使同样身着校服，你也比文学部里的其他女孩子好看得多":
             $ store.mas_gainAffection(3,bypass=True)
-            m 1eubsb "I'm so glad you think that, [player]~"
-            m 1rubsa "But I mean...ahaha...I kind of expected for my socks to get noticed by you, {nw}"
-            extend 1gubsb "a [guyGirl] who seems to love my thighs. Ahaha~"
-            m 1ekbsa "I'm honestly not exactly sure why you love them so much..."
-            m 2ekbsa "But..."
-            m 2ekbsb "If it means you'll keep complimenting me about them..."
-            m 5hubsa "Ehehe~"
-            m 5mubsa "Then I'm fine with it~"
+            m 1eubsb "你能这样想真让我高兴，[player]~"
+            m 1rubsa "不过说真的...啊哈哈...我也有点预料到你会盯上我的过膝袜， {nw}"
+            extend 1gubsb "一个好像对我大腿很着迷的[guyGirl]。哼哼~"
+            m 1ekbsa "老实讲，我也不太确定你是不是真的那么喜欢我的过膝袜..."
+            m 2ekbsa "不过..."
+            m 2ekbsb "如果你一直称赞它们的话..."
+            m 5hubsa "呵呵~"
+            m 5mubsa "我会因此非常开心的~"
 
-        "I bet they not only look good, but feel really smooth and silky too![naughty_bits]":
+        "我打赌它们不仅非常好看，摸起来也很柔顺光滑！[naughty_bits]":
             $ store.mas_gainAffection(2,bypass=True)
             if persistent._nsfw_genitalia == "P":
-                m 2subld "Ooo~"
-                m 2subsu "A thighjob, eh?"
-                m 2ttbsu "Aren't you pushing your luck a little {i}too{/i} far, [player]?"
+                m 2subld "哇哦~"
+                m 2subsu "素股是吗，嗯?"
+                m 2ttbsu "你是不是有点太{i}得寸进尺{/i}了，[player]?"
                 m 2tsbsu "..."
-                m 1hkbssdlb "Ahaha~ Who am I kidding?"
-                m 1eubsa "I will say..."
+                m 1hkbssdlb "呼呼~开玩笑的啦"
+                m 1eubsa "我只是想说..."
             else:
-                m 1eubsa "Well yeah,{nw}"
-                extend 3eubsa " they do feel {i}really{/i} smooth and silky~"
-            m 1tubsb "I wouldn't be wearing these for school if they weren't comfortable, would I?"
-            m 1hubsb "Ahaha~"
+                m 1eubsa "没错，{nw}"
+                extend 3eubsa "真的非常{i}柔顺光滑{/i}哦~"
+            m 1tubsb "如果感觉不舒服的话，我就不会每天穿着它们去上学了，对吧？"
+            m 1hubsb "啊哈哈~"
             if persistent._nsfw_genitalia == "P":
                 m 1rubsa "..."
-                m 2gubsa "So..."
-                m 2tubsb "I bet it would feel really nice for your cock between my squishy thighs and soft thighhighs~"
+                m 2gubsa "既然如此..."
+                m 2tubsb "我打赌你的小老弟一定会迷恋上我光滑的黑丝和柔软的大腿~"
                 m 2tubsa "I'm sure if I moved my legs, up and down, nicely jerking your massive dick with my thighs..."
                 m 2tfbfb "You would ejaculate all over my legs and belly in no time. Ahaha~"
                 m 1tubfa "..."
