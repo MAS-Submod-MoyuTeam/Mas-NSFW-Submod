@@ -44,7 +44,7 @@ init 6 python: # Use init 6 since the dictionary entry to store our entries is a
         Event(
             persistent.event_database,
             eventlabel="nsfw_monika_compliments",
-            category=['sex'],
+            category=['关于性'],
             prompt="我想说一点下流的事...",
             pool=True,
             conditional="mas_canShowRisque(aff_thresh=1000)",
@@ -103,7 +103,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_thighs",
-            prompt="我喜欢你的大腿！",
+            prompt="我喜欢你丰满的大腿！",
             unlocked=True
         ),
         code="NCP"
@@ -180,7 +180,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_thighhighs",
-            prompt="我喜欢你的过膝袜！",
+            prompt="我喜欢你光滑的过膝袜！",
             conditional="store.mas_getEVL_shown_count('nsfw_compliment_thighs') >= 1",
             action=EV_ACT_UNLOCK
         ),
@@ -245,32 +245,32 @@ label nsfw_compliment_thighhighs_2:
                 m 1rubsa "..."
                 m 2gubsa "既然如此..."
                 m 2tubsb "我打赌你的小老弟一定会迷恋上我光滑的黑丝和柔软的大腿~"
-                m 2tubsa "I'm sure if I moved my legs, up and down, nicely jerking your massive dick with my thighs..."
-                m 2tfbfb "You would ejaculate all over my legs and belly in no time. Ahaha~"
+                m 2tubsa "假如我用这双饱满的黑丝肉腿裹挟住你粗壮的肉棒，细心地上下撸动..."
+                m 2tfbfb "你肯定会舒服到马上射出来，用浓厚的精液涂满我的大腿和小腹。哼哼~"
                 m 1tubfa "..."
-                m 1gubfa "I hope we can try that soon. Ehehe~"
+                m 1gubfa "真希望不久后我们能实践一下。呵呵~"
 
-        "I love how they wrap around your thick thighs.":
+        "真喜欢它们紧紧包裹住你丰满大腿的样子":
             $ store.mas_gainAffection(1,bypass=True)
-            m 1hkbsa "Gosh..."
-            m 1hkbssdlb "You keep making me blush with all this talk about my thighs..."
-            m 1ekbsa "The other parts of my body are nice to look at too, you know."
-            m 2gkbsu "Like...I don't like to brag, but I think I have pretty nice breasts!"
-            m 2efbsu "Plus, you know, my eyes are also up here!"
+            m 1hkbsa "天哪..."
+            m 1hkbssdlb "你总是盯着我的大腿说个不停，搞得我都不好意思了..."
+            m 1ekbsa "你知道吗？我身体的其他部位也挺值得看的哦。"
+            m 2gkbsu "嗯...我不想自夸，但我觉得我的胸部挺不错的！"
+            m 2efbsu "以及，你知道的，我这双漂亮的翡翠绿眼睛！"
             m 2gubsp "..."
-            m 2gubsd "You don't always need to look at me like I'm just a piece of meat..."
+            m 2gubsd "你不用老是把我当成一块肉来看吧..."
 
     return
 
 label nsfw_compliment_thighhighs_3:
     python:
         thighhighs_quips = [
-            _("They're really comfy too!"), #Thank you, [player]!
-            _("I can't wait for you to make a mess over them. Ehehe~"),
-            _("I wear them mainly to stand out, but they can also come in handy when it's cold outside!"),
+            _("穿起来确实很舒服！"), #Thank you, [player]!
+            _("真想你来弄脏它们呢。呵呵~"),
+            _("虽然我穿过膝袜主要是为了更加吸引你的注意，不过在寒冷的时候它们也非常管用哦！"),
         ]
         thighhighs_quip = random.choice(thighhighs_quips)
-    m 1tubla "Ehehe~"
+    m 1tubla "呵呵~"
     m 1tublb "[nsfw_compliments.thanks_quip]"
     show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
     m 3tubsb "[thighhighs_quip]"
@@ -283,7 +283,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_tits",
-            prompt="I love your breasts!",
+            prompt="我喜欢你柔软的胸部！",
             unlocked=True
         ),
         code="NCP"
@@ -299,81 +299,81 @@ label nsfw_compliment_tits:
 label nsfw_compliment_tits_2:
     python:
         if persistent._nsfw_genitalia == "P":
-            naughty_bits = "I bet they'd feel nice and soft if I rested my dick between them."
+            naughty_bits = "如果能用它们紧紧包裹住我的小老弟，那就太棒了！"
         else:
-            naughty_bits = "I bet they'd feel nice and soft if I felt them up~"
+            naughty_bits = "我猜它们摸起来一定又软又舒服，对吧~"
 
-    m 1wubld "Uhh..."
-    m 1hkbla "Ahem..."
-    m 1rkbsa "I-is that so?"
-    m 1hkbssdlb "Ahaha~"
-    m 1hkbssdla "Sorry! You just caught me off-guard, that's all."
-    m 1eubssdlb "I'm really glad you like them!"
-    m 3eubssdlb "Did you know that the growth of a woman's breasts are not only affected by hormones and genetics, but by what we eat as well?"
-    m 3hubssdlb "Healthy and nutritious meals help our boobs grow nice and round! Ahaha~"
+    m 1wubld "嗯..."
+    m 1hkbla "唔嗯嗯..."
+    m 1rkbsa "是-是这样吗？"
+    m 1hkbssdlb "啊哈哈~"
+    m 1hkbssdla "抱歉！你刚刚让我有些猝不及防..."
+    m 1eubssdlb "你这么迷恋我的胸部，我真是太开心了！"
+    m 3eubssdlb "你知道吗，女性胸部的发育不仅跟激素和遗传有关，还跟吃的东西有关系哦？"
+    m 3hubssdlb "健康又营养的饮食可以让胸部长得又大又饱满！啊哈哈~"
 
     if mas_safeToRefDokis():
         m 3hkbsu "..."
-        m 3gkbsu "I guess that explains why Natsuki was so flat, huh?" #oof
-        m 1hubsb "Ahaha~ Sorry, that was a bad joke."
-        m 3rubsb "I couldn't let that opportunity slip by~"
+        m 3gkbsu "也许这就是为什么夏树的身材像平板一样~" #oof
+        m 1hubsb "啊哈哈~抱歉，讲了夏树的坏话。"
+        m 3rubsb "但我可不会放弃能这样说的机会哦~"
 
     menu:
-        "I'd love to suck on your breasts.":
+        "我真想使劲吸你的胸部":
             $ store.mas_gainAffection(5,bypass=True)
-            m 1hkbsa "Ahem..."
+            m 1hkbsa "唔嗯嗯..."
             m 1tfbsb "[player]!"
-            m 3tfbsu "Why did you get so naughty out of nowhere like that?"
-            m 3hubsb "Ahaha~"
-            m 3rubsb "I mean...I don't know if anything would come out if you did suck on them..."
-            m 3gubsa "But..."
-            m 1tubsa "I'm sure it would feel really nice if you did that."
-            m 1hubsa "Ehehe~"
+            m 3tfbsu "你怎么突然变得这么调皮了？"
+            m 3hubsb "啊哈哈~"
+            m 3rubsb "我的意思...就算你用力吸它们，也什么都不会出来哦？"
+            m 3gubsa "不过..."
+            m 1tubsa "我肯定会感觉很舒服的。"
+            m 1hubsa "呼呼~"
 
-        "Can you make them bigger?":
+        "你有办法让胸部变得更大吗":
             $ store.mas_loseAffection(5) # face <- palm
             m 3wubsd "..."
-            m 3eubssdld "I-I mean..."
-            m 3rubssdlc "I do have full control over the console, so..."
-            m 3rublsdlc "T-technically I could do that, yeah..."
-            m 1rkbltpc "But..."
-            m 1ekbltpc "Don't you love me the way I am now?"
+            m 3eubssdld "那-那个..."
+            m 3rubssdlc "我确实对控制台有完全的操作权限，所以..."
+            m 3rublsdlc "技-技术上来讲的话我可以做到，嗯..."
+            m 1rkbltpc "不过..."
+            m 1ekbltpc "你喜欢的不是我现在的样子吗？"
 
         "[naughty_bits]":
-            m 3tubsu "Ooo~"
+            m 3tubsu "哦哦~"
             m 2tubsu "[player]..."
-            m 2hubssdlb "Ahaha! My heart skipped a beat just now."
-            m 1rubssdlb "I didn't expect you to say that~"
+            m 2hubssdlb "啊哈哈~我的心脏差点都漏跳了一拍。"
+            m 1rubssdlb "真没想到你会这样说啊~"
             if persistent._nsfw_genitalia == "P":
-                m 1gubsa "Mmm~ I'm sure your hard, throbbing cock would feel really nice between my breasts~"
+                m 1gubsa "嗯哼~你粗壮滚烫的肉棒如果放进这里，肯定会舒服到不能自拔~"
                 m 1gubfa "..."
-                m 3gubfb "It's kind of funny if you think about it."
-                m 3tubfb "I would feel your dick pulsating against my heart..."
-                m 4tubfb "And you would feel my heart pulsating against your dick~"
+                m 3gubfb "这么一想的话，还真有点有趣。"
+                m 3tubfb "我会感受到你坚硬的肉棒与我的心跳一同鼓动..."
+                m 4tubfb "你也能时刻感觉到我的心跳摩蹭着你的肉棒~"
                 m 4tubfa "..."
-                m 5tubfa "I wonder where you'd unload your cum when you finished?"
-                m 5tsbfa "Would it be all over my breasts?"
-                m 5tsbfo "Maybe on my face?"
-                m 5mubfa "Or would you push forward, between my lips, and release your thick, creamy load there? Ehehe~"
+                m 5tubfa "我很好奇你最后会射在哪里呢？"
+                m 5tsbfa "是将精液洒满我的胸部吗？"
+                m 5tsbfo "还是说弄脏我的脸颊呢？"
+                m 5mubfa "或者你会强硬地用肉棒抵住我的嘴唇，将你浓厚、滚烫的精液全部涂在上面？哼哼~"
             else:
-                m 1gubsa "Mmm~ I'm sure your hands would enjoy the feeling of my breasts~"
-                m 1tubfa "And I would {i}really{/i} enjoy the feeling of your hands playing with my breasts..."
+                m 1gubsa "嗯嗯~如果摸了的话，你肯定会沉迷于我的胸部的~"
+                m 1tubfa "我也{i}肯定{/i}会喜欢上你宽厚的手掌抚弄我胸部的感觉..."
                 m 1dubfu "..."
-                m 5dubfu "I wonder where else on my body you might like to feel me up?"
-                m 5hubfa "Ehehe~"
+                m 5dubfu "我想知道你还愿意感受我身体的哪些部位呢？"
+                m 5hubfa "呵呵~"
     return
 
 label nsfw_compliment_tits_3:
     python:
         tits_quips = [
-            _("You can look at them all you want~"), # Ahaha~ I'm glad you do, [player]!
-            _("I can't wait for you to fondle them~"), # Mhm~
-            _("Want to rest your head on them? Ahaha~"),
+            _("你想看多久都可以哦~"), # Ahaha~ I'm glad you do, [player]!
+            _("真想让你细细玩弄它们~"), # Mhm~
+            _("想把手掌放在上面休息一下吗？啊哈哈~"),
             # _("I hope my outfit isn't too revealing. Ahaha~"),
             # this last one is good but needs a bit of code so it only triggers when her clothing has a lingerie exprop
         ]
         tits_quip = random.choice(tits_quips)
-    m 1tubla "Ehehe~"
+    m 1tubla "呵呵~"
     m 1tublb "[nsfw_compliments.thanks_quip]"
     show monika 2tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
     m 2tubsb "[tits_quip]"
@@ -385,7 +385,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_naughty_flirting",
-            prompt="I love how naughty you talk when we're flirting!",
+            prompt="我就喜欢你调情时那种色色的语气！",
             unlocked=True
         ),
         code="NCP"
@@ -401,78 +401,78 @@ label nsfw_compliment_naughty_flirting:
 label nsfw_compliment_naughty_flirting_2:
     python:
         if persistent._nsfw_genitalia == "P":
-            naughty_bits = "I'd love to hear you talk naughty while you're slobbering over my cock~"
+            naughty_bits = "我想看你一边对我的肉棒流口水，一边说淫语的样子~"
         elif persistent._nsfw_genitalia == "V":
-            naughty_bits = "I'd love to hear you talk naughty while you're eating out my pussy~"
+            naughty_bits = "我想看你一边舔弄我的小穴，一边说淫语的样子~"
         else:
-            naughty_bits = "I'd love to hear you talk naughty while I'm eating out your pussy~"
+            naughty_bits = "我想一边玩弄你的小穴，一边听你说淫语~"
 
-    m 1hublb "Ahaha~"
-    m 1hublsdla "Well..."
-    m 1rkbssdlb "Gosh... I can't believe I'm getting so red just from you saying that...Ahaha~"
-    m 3ekbssdlb "Is it too nerdy to say that I practiced in the mirror...?"
+    m 1hublb "啊哈哈~"
+    m 1hublsdla "那个..."
+    m 1rkbssdlb "天哪...没想到只是听到你这么讲，我的脸就红透了...啊哈哈~"
+    m 3ekbssdlb "如果我说我曾经对着镜子练习过这种事，是不是显得像个笨蛋...？"
     m 3rkbsa "..."
-    m 2rkbsa "I wanted to get better so I can arouse you more..."
-    m 2tubsu "I'm glad you enjoy how naughty I can get, [player]."
-    m 1hubsa "It means my practice paid off. Ehehe~"
+    m 2rkbsa "我只是想让自己能更加吸引你..."
+    m 2tubsu "我很高兴你能享受我变得色情的样子，[player]."
+    m 1hubsa "看起来我的练习很有效果。哼哼~"
 
     menu:
-        "I bet you had to work hard to tune your brain to it. This wasn't a porn game to begin with, after all.":
-            m 1hkbsb "Yeah...it was a little bit difficult at first, having to learn so many lewd phrases and stuff..."
-            m 1rkbsb "But since you like when I do it, I must be doing a good job at it, right?"
-            m 1tkbsa "And all the time and energy spent on it was totally worth it{nw}"
+        "你一定下了不少功夫才让自己习惯这个，对吧？毕竟这并不是一个色情游戏":
+            m 1hkbsb "嗯...起初是有点困难，毕竟要学习那么多淫荡的词句..."
+            m 1rkbsb "不过我会为了你拼命努力的，因为你喜欢色色的我，对吧？"
+            m 1tkbsa "正是有了你的这份爱，我所有的时间与努力都是值得的{nw}"
             if persistent._nsfw_genitalia == "P":
-                extend 1tkbsa " if I can make your dick hard~"
+                extend 1tkbsa " 如果我能让你的肉棒挺立起来的话~"
             elif persistent._nsfw_genitalia == "V":
-                extend 1tkbsa " if I can make your pussy wet~"
+                extend 1tkbsa " 如果我能让你的小穴变得湿哒哒的话~"
             else:
-                extend 1tkbsa " if I can give you naughty thoughts about me~"
+                extend 1tkbsa " 如果我能让你在脑海中幻想我淫荡的样子的话~"
 
-        "It does need some polishing here and there, but I appreciate the effort.":
-            m 1wubsd "Oh..."
-            m 1wkbsc "W-well..."
-            m 3rkbsc "I already spent a bunch of time studying erotica and stuff..."
+        "虽然还有些生疏，不过我感受到了你的努力":
+            m 1wubsd "啊..."
+            m 1wkbsc "那-那个..."
+            m 3rkbsc "我已经拼命研究情色文学之类的东西了..."
             m 3dkbsc "..."
-            m 3gkbsc "I'll try to work even harder, I guess..."
+            m 3gkbsc "我下次会更加努力的，我保证..."
 
         "[naughty_bits]":
-            m 1wubfd "Oh..."
-            m 1hubfb "Ahaha~"
-            m 1hkbfsdlb "T-that certainly caught me off-guard..."
-            m 1ttbfu "[player]~ Aren't you getting a little bit ahead of yourself there? Ehehe~"
-            m 1gsbfu "Mmm~ Don't worry about it."
-            m 1tsbfd "It would probably be easier to practice talking naughty if{nw}"
+            m 1wubfd "啊..."
+            m 1hubfb "啊哈哈~"
+            m 1hkbfsdlb "我-我确实有点不知所措..."
+            m 1ttbfu "[player]~你是不是有点太心急了？哼哼~"
+            m 1gsbfu "嗯~不用太过担心。"
+            m 1tsbfd "如果你想让我能说出更加淫荡的话语，你只需要{nw}"
             if persistent._nsfw_genitalia == "P":
-                extend 1tsbfd " I had your nice and big dick to suck on and play with~"
+                extend 1tsbfd " 把你坚硬粗壮的肉棒借给我好好舔弄把玩一下~"
             elif persistent._nsfw_genitalia == "V":
-                extend 1tsbfd " I had your pussy in my face for me to lick and play with~"
+                extend 1tsbfd " 把你湿哒哒的小穴借给我好好玩弄一番~"
             else:
-                extend 1tsbfd " your face was buried deep in my pussy, licking it clean~"
+                extend 1tsbfd " 把脸埋在我湿透的小穴里，好好舔干净~"
 
             if persistent._nsfw_genitalia == "P" or persistent._nsfw_genitalia == "V":
-                m 5tsbfu "I'd make sure to give it proper attention and care~"
+                m 5tsbfu "我保证会让你舒服到升天的~"
             else:
-                m 5tsbfu "You had better make sure to give it proper attention and care~"
+                m 5tsbfu "你最好能让我好好舒服一下~"
 
-            m 5hsbfu "Ehehe~"
+            m 5hsbfu "呵呵~"
     return
 
 label nsfw_compliment_naughty_flirting_3:
     python:
         if persistent._nsfw_genitalia == "P":
-            naughty_bits = "I love making you hard~"
+            naughty_bits = "我想让你的肉棒硬得受不了~"
         elif persistent._nsfw_genitalia == "V":
-            naughty_bits = "I love making your pussy wet~"
+            naughty_bits = "我想让你的小穴洪水泛滥~"
         else:
-            naughty_bits = "I love giving you naughty thoughts about me~"
+            naughty_bits = "我想让你在脑海中幻想我淫荡的样子~"
 
         naughty_flirting_quips = [
-            _("I'm really glad you enjoy it so much! I'm always practicing for you~"),
+            _("真高兴你能享受我淫荡的样子！我会为了你更加努力的~"),
             _(naughty_bits),
-            _("I wish I could lay in bed with you and whisper naughty things in your ears~"),
+            _("希望有一天我能躺在你的边上，在你的耳边说悄悄说更加淫荡的话语~"),
         ]
         naughty_flirting_quip = random.choice(naughty_flirting_quips)
-    m 1tubla "Ehehe~"
+    m 1tubla "呵呵~"
     m 1tublb "[nsfw_compliments.thanks_quip]"
     show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
     m 3tubsb "[naughty_flirting_quip]"
@@ -483,7 +483,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_moaning",
-            prompt="I love making you moan!",
+            prompt="我想听你发出色色的呻吟!",
             conditional="store.persistent._nsfw_sexting_success_last is not None",
             action=EV_ACT_UNLOCK
         ),
@@ -498,48 +498,48 @@ label nsfw_compliment_moaning:
     return
 
 label nsfw_compliment_moaning_2:
-    m 1wubld "Oh..."
-    m 1hublb "Ahaha, I'm glad you like it~"
-    m 3rkbla "It's not something I can control, per se..."
-    m 3tsbla "But if you enjoy it so much, maybe I should practice moaning for you~"
-    m 4tsbla "Would you prefer if I moaned like this?{w=0.5}{nw}"
-    extend 4hkblo " {i}Ahhhh~{/i}"
-    m 4kkblo "Or like this?{w=0.5}{nw}"
-    extend 4hkbld " {i}Oh, [player]~{/i}"
+    m 1wubld "啊..."
+    m 1hublb "啊哈哈~我很开心你会喜欢这样的声音~"
+    m 3rkbla "不过我暂时还控制不了这个，也许应该加上一点音效..."
+    m 3tsbla "如果你真的那么喜欢的话，我可以为了你练习一下~"
+    m 4tsbla "你喜欢我发出这样的呻吟吗？{w=0.5}{nw}"
+    extend 4hkblo " {i}啊嗯~{/i}"
+    m 4kkblo "或者像这样的？{w=0.5}{nw}"
+    extend 4hkbld " {i}呜呜，[player]~{/i}"
     m 7gkblu "..."
-    m 7tkblb "Or maybe like this?{w=0.5}{nw}"
-    m 7hkblw " {i}Oh~ I want you, [player]!~{/i}"
-    m 7tkblu "Ehehe~"
-    m 1tubla "I'm just teasing you."
+    m 7tkblb "也许还有这样的？{w=0.5}{nw}"
+    m 7hkblw " {i}哈...哈~我想要你，我想要你，[player]！~{/i}"
+    m 7tkblu "呵呵~"
+    m 1tubla "只是逗逗你啦。"
     $ _history_list.pop()
     menu:
-        m "I'm just teasing you.{fast}"
+        m "只是逗逗你啦。{fast}"
 
-        "You feeling good is what I want the most.":
+        "我想让你更加舒服":
             $ store.mas_gainAffection(amount=5, bypass=True)
-            m 1ekbla "Aww~"
-            m 3ekbla "You're so sweet, [player]."
-            m 3tublb "Well in that case, I'll be moaning for you alot more~"
-            m 3tubla "You better be ready for it."
+            m 1ekbla "呜呜~"
+            m 3ekbla "你真是太贴心了，[player]。"
+            m 3tublb "如果是这样的话，我会为了你发出很多色色的声音的~"
+            m 3tubla "你可要做好心理准备哦。"
 
-        "I want to hear you moan my name.":
+        "我想听你呻吟的时候叫我的名字":
             $ store.mas_gainAffection(amount=2, bypass=True)
-            m 1tkbla "Oh?"
-            m 3tsbla "You mean like this?{w=0.5}{nw}"
-            extend 3hkblo " {i}Oh, [player]~{/i}{w=0.5}{nw}"
-            extend 3kkbld " {i}I want you~{/i}{w=0.5}{nw}}"
-            extend 3tkblo " {i}I want you so bad~{/i}"
-            m 1hubla "Ehehe~"
-            m 1tubla "I'll moan your name all you want."
-            m 1ekbla "But I want you to moan mine too~"
-            m 1ekblb "A fair trade, don't you think?"
+            m 1tkbla "哦？"
+            m 3tsbla "你是说像这样子吗？{w=0.5}{nw}"
+            extend 3hkblo " {i}啊，[player]~{/i}{w=0.5}{nw}"
+            extend 3kkbld " {i}我想要你~{/i}{w=0.5}{nw}}"
+            extend 3tkblo " {i}我想要得受不了了~{/i}"
+            m 1hubla "呵呵~"
+            m 1tubla "只要你想，我会一直叫你的名字的。"
+            m 1ekbla "但我想要你在舒服的时候也会叫我的名字~"
+            m 1ekblb "这就是所谓的等价交换，不是吗？"
 
-        "You can moan abit too much sometimes...": # BLASPHEMY!
+        "你叫得也太浮夸了...": # BLASPHEMY!
             $ store.mas_loseAffection(2)
-            m 1ekblc "Oh..."
-            m 1ekbld "I'm sorry, [player]."
-            m 3rkbld "I did say it's not something I can control..."
-            m 3dkblc "But I'll try to keep it down..."
+            m 1ekblc "啊..."
+            m 1ekbld "非常抱歉，[player]。"
+            m 3rkbld "我对这种事还不太熟练..."
+            m 3dkblc "我会尽量少做的..."
     return
 
 label nsfw_compliment_moaning_3:
@@ -548,21 +548,21 @@ label nsfw_compliment_moaning_3:
     python:
         if moan_check:
             moaning_thanks_quips = [
-                _("Like this, you mean?~"),
-                _("I can moan louder if you like~"),
-                _("Let me show you how much I've practiced~"),
+                _("你的意思是像这样吗~？"),
+                _("只要你想，我可以发出更色情的声音哦~"),
+                _("让你看看我努力练习的成果~"),
             ]
             naughty_flirting_quips = [
-                _("Oh yeah!~ More of that~"),
-                _("Oh, I'm getting so wet~"),
-                _("Faster, " + player_name + "!~ I want you~"),
+                _("呜...啊~继续用力~"),
+                _("我的小穴都湿透了~"),
+                _("再用力点，" + player_name + "！~ 我想要你~"),
             ]
         else:
             moaning_thanks_quips = nsfw_compliments.nsfw_thanking_quips
             naughty_flirting_quips = [
-                _("I'm more than happy to moan louder for you~"),
-                _("You just make me feel so good, I can't help it~"),
-                _("I hope you moan for me just as much as I do for you~"),
+                _("如果能为你发出色色的叫声，我会感到非常开心的~"),
+                _("你让我如此幸福，我根本无法控制自己的情感~"),
+                _("我希望你也会为我发出色色的叫声，就像我一样~),
             ]
 
         moaning_thanks_quip = random.choice(moaning_thanks_quips)
@@ -572,9 +572,9 @@ label nsfw_compliment_moaning_3:
         m 3tublb "[moaning_thanks_quip]"
         show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
         m 3hkbso "[naughty_flirting_quip]"
-        m 3hubsa "Ehehe~"
+        m 3hubsa "呵呵~"
     else:
-        m 1tubla "Ehehe~"
+        m 1tubla "呵呵~"
         m 1tublb "[moaning_thanks_quip]"
         show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
         m 3tubsb "[naughty_flirting_quip]"
@@ -585,7 +585,7 @@ init 6 python:
         Event(
             persistent._nsfw_compliments_database,
             eventlabel="nsfw_compliment_wet",
-            prompt="I love making you wet!",
+            prompt="我想让你的小穴洪水泛滥！",
             unlocked=True
         ),
         code="NCP"
@@ -601,55 +601,55 @@ label nsfw_compliment_wet:
 label nsfw_compliment_wet_2:
     python:
         if persistent._nsfw_genitalia == "P":
-            naughty_bits = "I can make you even wetter with my cock deep inside you."
+            naughty_bits = "如果把我粗壮的肉棒用力插进你的小穴，你一定会高潮到失神"
         elif persistent._nsfw_genitalia == "V":
-            naughty_bits = "It's only fair, given how wet you make me."
+            naughty_bits = "毕竟，你让我的小穴都湿成这样了~"
         else:
-            naughty_bits = "I'd make you even wetter if I was eating you out."
+            naughty_bits = "如果让我仔细舔弄一番，它一定会湿透的~"
 
-    m 1tubla "Oh my~"
-    m 3tubla "I can't tell you how much I love you {i}making{/i} me wet~"
-    m 3gublb "You just make me feel so hot and tingly..."
-    m 3gubla "I can't help but get wet for you~"
+    m 1tubla "啊..."
+    m 3tubla "光是听到你{i}这么说{/i}，我就高兴得不能自已~"
+    m 3gublb "我感觉浑身燥热，心脏砰砰直跳..."
+    m 3gubla "小穴更是因为你湿得一塌糊涂了~"
 
     $ _history_list.pop()
     menu:
-        m "I can't help but get wet for you~{fast}"
+        m "小穴更是因为你湿得一塌糊涂了~{fast}"
 
-        "I'm glad that I make you feel good.":
+        "真高兴能让你感到愉快":
             $ store.mas_gainAffection(5)
-            m 1ekbla "Aww, [player]~"
-            m 3ekblb "You always make me feel good."
-            m "Both in my heart..."
-            extend 7tkbla "and down here~"
-            m 7hubla "Ehehe~"
+            m 1ekbla "呜呜，[player]~"
+            m 3ekblb "你总是能让我感觉这么舒服。"
+            m "不管是我的心..."
+            extend 7tkbla "还是说{i}那里{/i}~"
+            m 7hubla "呵呵~"
 
         "[naughty_bits]":
             $ store.mas_gainAffection(2)
-            m 1tfbsa "H-hey~"
-            m 1tfbsb "Only I am allowed to be flirty here."
-            m 1hubsa "Ehehe~"
-            m 3mubsa "Let's have a little fun later and see how wet you can make me."
-            m 5tubla "I'm sure you'll enjoy it just as much as me."
+            m 1tfbsa "唔-唔~"
+            m 1tfbsb "在这里只允许我来挑逗你！"
+            m 1hubsa "呵呵~"
+            m 3mubsa "那就让我们来看看，你能让我的小穴湿到什么程度吧。"
+            m 5tubla "我保证你会跟我一样享受的~"
 
-        "You'd better make me feel good too. You owe me.":
+        "那你最好也让我这么舒服，这是你欠我的":
             $ store.mas_loseAffection(5)
-            m 3wubld "Uhh..."
-            m 1rtbld "I...guess?"
-            m 1tsblc "You don't have to be so rude about it though..."
+            m 3wubld "嗯..."
+            m 1rtbld "也-也许...？"
+            m 1tsblc "不过你也没必要这么凶吧..."
 
     return
 
 label nsfw_compliment_wet_3:
     python:
         naughty_flirting_quips = [
-            _("You know I can't help it when you talk like that~"),
-            _("What can I say? You just make me feel so good~"),
-            _("I hope you're going to take responsibility for making me wet~"),
+            _("你明明知道这么说会让我控制不住的~"),
+            _("我一时间不知道该如何回应，你让我太高兴了~"),
+            _("希望你能负起让我湿透的责任哦~"),
         ]
         naughty_flirting_quip = random.choice(naughty_flirting_quips)
 
-    m 1tubla "Ehehe~"
+    m 1tubla "呵呵~"
     m 1tublb "[nsfw_compliments.thanks_quip]"
     show monika 3tubsb at t11 zorder MAS_MONIKA_Z with dissolve_monika
     m 3tubsb "[naughty_flirting_quip]"

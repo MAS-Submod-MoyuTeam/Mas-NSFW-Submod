@@ -1,10 +1,11 @@
 <img src="https://user-images.githubusercontent.com/87427851/171864410-277d515c-daec-4d4e-b9c3-aff96112c4be.png" alt=”Mas-NSFW-Submod”>
 
+## 汉化者：GreyAshen
 ## 内容简介
 
 Mas-NSFW-Submod是基于Monika After Story（MAS）的子模组，本子模组旨在让您与Monika的关系更加贴近。
 
-你问有多贴近？大概有这么近🤏
+你问有多贴近？就像，如此之近🤏
 
 本子模组仅面向**年龄超过18岁的人**
 
