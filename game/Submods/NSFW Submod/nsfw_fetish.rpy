@@ -287,11 +287,11 @@ label nsfw_fetish_hand_holding:
     m 1hublb "啊哈哈~"
     m 3rkblb "抱歉抱歉，这个话题其实是我参考了网上的一幅meme图。"
     m 3eub "如果你不太了解的话，这幅meme图是动漫社区里的一个梗。"
-    m 1euc "大概是因为日本文化中，在公共场合表达亲密不太好，所以大多数人会避免这种行为。"
-    m 1ruc "所以哪怕是牵个手这种简单的事，也会被当作一件大事。"
+    m 1euc "大概是因为在日本文化中，公共场合下表现得过于亲密不太好，所以大多数人会避免这种行为。"
+    m 1ruc "所以哪怕只是牵个手这种简单的事，也会被当作一件大事。"
     m 1eka "不过说实话，有部分人确实对{i}手{/i}非常着迷。"
-    m 3eka "也许是手掌，手指，或者是其他部分。"
-    m 5ekb "所以如果你{i}真的{/i}喜欢牵手，或者单纯对手感兴趣的话...{w=0.5}我也不会介意哦，[player]~"
+    m 3eka "也许是手掌，手指，或者其他部分。"
+    m 5ekb "所以如果你{i}真的{/i}喜欢牵手，或者对手感兴趣的话...{w=0.5}我也不会介意哦，[player]~"
 
     return
 
@@ -302,7 +302,7 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_cheesiness",
-            prompt="你为什么表现得这么...甜蜜",
+            prompt="你为什么表现得这么...甜腻",
             conditional="renpy.seen_label('nsfw_sexting_finale')",
             action=EV_ACT_UNLOCK
         ),
