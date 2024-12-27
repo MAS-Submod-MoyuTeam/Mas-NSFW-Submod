@@ -16,19 +16,19 @@ label greeting_nsfw_seductive:
         # get if it is daytime or nighttime, simple as
     python:
         if mas_globals.time_of_day_4state == "night":
-            tod = "night"
-            this_day = "this evening"
+            tod = "晚"
+            this_day = "夜晚"
         else:
-            tod = "day"
-            this_day = "today"
-    m 1eubfb "Why, {i}hello there{/i}, [player]~"
+            tod = "天"
+            this_day = "一天"
+    m 1eubfb "哦，{i}你来了，{/i}，[player]~"
     if ev.shown_count == 0:
-        m 1eubfb "You look positively {i}sexy{/i} to[tod]."
-        m 1fkbssdla "Why, I could just...um...take your clothes off...? And..."
-        m 2hub "Ahaha! Sorry, [player], I need to practice at this. I'll get it right next time."
+        m 1eubfb "你今[tod]看起来真是太{i}迷人{/i}了。"
+        m 1fkbssdla "我...我能...嗯...把你的衣服脱...脱掉吗？还有...""
+        m 2hub "哈哈！抱歉，[player]，我只是想练习一下这种事。下次我会做得更好的。"
     else:
-        m 1tubsu "I thought things must be getting hotter, and now I know why. It's because you were nearby."
-        m 6tkbsa "You're looking positively wonderful to[tod], [mas_get_player_nickname()]..."
-        m 1tubsa "But I think you'd look even better with your clothes off."
-        m 4tubsu "Let's have a good time together [this_day]. Ehehe~"
+        m 1tubsu "我感觉浑身越来越燥热了...看来是因为你在我旁边呢。"
+        m 6tkbsa "你今[tod]看上去是如此诱人可口，[mas_get_player_nickname()]..."
+        m 1tubsa "要是能再脱下你的衣服，你肯定会更加性感的。"
+        m 4tubsu "让我们一同享受这美妙的[this_day]吧。呵呵~"
     return
