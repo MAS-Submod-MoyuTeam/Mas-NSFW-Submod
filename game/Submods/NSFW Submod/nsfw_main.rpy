@@ -3,7 +3,7 @@ init -990 python in mas_submod_utils:
         author="NickWildish",
         name="NSFW Submod",
         version="1.3.5",
-        description="A collection of NSFW topics and features for MAS.",
+        description="一个收集了各种色色话题的Submod（GreyAshen汉化）",
         settings_pane="nsfw_submod_screen",
         version_updates= {
             "nickwildish_nsfw_submod_v1_0_3": "nickwildish_nsfw_submod_v1_1_0",
@@ -84,12 +84,12 @@ screen nsfw_submod_screen():
                     end_disp = str(_nsfw_player_endurance)
 
             if _tooltip:
-                textbutton _("Sexting Endurance"):
+                textbutton _("色色持续时间"):
                     action NullAction()
-                    hovered SetField(_tooltip, "value", "Changes the duration that Monika will last during sexting, from ~5 minutes to ~55 minutes. Currently set to: " + end_disp)
+                    hovered SetField(_tooltip, "value", "将莫妮卡每次色色状态的持续时间设置为 5 分钟至 55 分钟。当前设置为: " + end_disp)
                     unhovered SetField(_tooltip, "value", _tooltip.default)
             else:
-                textbutton _("Sexting Endurance"):
+                textbutton _("色色持续时间"):
                     action NullAction()
 
             bar value FieldValue(
@@ -115,12 +115,12 @@ screen nsfw_submod_screen():
                     sext_freq_disp = str(_nsfw_monika_sexting_frequency)
 
             if _tooltip:
-                textbutton _("Monika Sexting Frequency"):
+                textbutton _("色色频率"):
                     action NullAction()
-                    hovered SetField(_tooltip, "value", "Changes the duration that Monika will wait until randomly trying to sext, from 12 hours, 24 hours, or never. Currently set to: " + sext_freq_disp)
+                    hovered SetField(_tooltip, "value", "将莫妮卡进入色色状态的时间间隔设置为12小时，24小时或从不。当前设置为: " + sext_freq_disp)
                     unhovered SetField(_tooltip, "value", _tooltip.default)
             else:
-                textbutton _("Monika Sexting Frequency"):
+                textbutton _("色色频率"):
                     action NullAction()
 
             bar value FieldValue(

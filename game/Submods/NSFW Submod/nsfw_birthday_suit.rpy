@@ -25,7 +25,7 @@ init -1 python:
         "clothes",
         visible_when_locked=True,
         select_dlg=[
-            "AH! Where have my clothes gone?!" #temp
+            "咦，我的衣服去哪了？！" #temp
         ]
     )
 
@@ -54,7 +54,7 @@ init -1 python:
         "clothes",
         visible_when_locked=True,
         select_dlg=[
-            "AH! Where have my clothes gone?!" #temp
+            "咦，我的衣服去哪了？！" #temp
         ]
     )
 
@@ -83,7 +83,7 @@ init -1 python:
         "clothes",
         visible_when_locked=True,
         select_dlg=[
-            "AH! Where have my clothes gone?!" #temp
+            "咦，我的衣服去哪了？！" #temp
         ]
     )
 
@@ -112,6 +112,6 @@ init -1 python:
         "clothes",
         visible_when_locked=True,
         select_dlg=[
-            "AH! Where have my clothes gone?!" #temp
+            "咦，我的衣服去哪了？！" #temp
         ]
     )

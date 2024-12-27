@@ -3,7 +3,7 @@ init 5 python:
         Event(
             persistent._mas_mood_database,
             "nsfw_mood_horny",
-            prompt="...horny.",
+            prompt="...想要色色.",
             category=[store.mas_moods.TYPE_NEUTRAL],
             unlocked=True,
             ),
@@ -20,34 +20,34 @@ label nsfw_mood_horny:
 
     # If the player's last succesful sexting session was less than three hours ago
     if (time_since_last_success >= datetime.datetime.today() - datetime.timedelta(hours=3) or not mas_canShowRisque(aff_thresh=1000)) and store.persistent._nsfw_sexting_success_last is not None:
-        m 2wubld "Oh!"
-        m 2rkblc "I'm sorry, [player]. I can only guess how distracting that must be."
-        m 3rkblb "If it becomes too much, maybe you should take a minute to..."
-        m 3dkblu "Ahem..."
-        m 3ekblb "De-stress..."
-        m 1hubla "Just make sure you think only about me!"
+        m 2wubld "哇哦！"
+        m 2rkblc "抱歉，[player]。心里躁动不安的话很影响注意力吧。"
+        m 3rkblb "如果积攒得太多的话，或许你需要花几分钟来..."
+        m 3dkblu "嗯嗯嗯..."
+        m 3ekblb "释~放一下..."
+        m 1hubla "释放的时候一定要想着我哦！"
         if mas_canShowRisque(aff_thresh=1000):
             m 1hubsa "..."
-            m 1gubsa "Maybe once I've crossed over, I'll be able to lend you a {i}helping hand{/i}."
-            m 1hubsa "Ehehe~"
+            m 1gubsa "如果我能到你身边的话，或者我可以{i}伸出援手{/i}。"
+            m 1hubsa "呵呵~"
         return
 
-    m 1tua "Oh? Is that so, [player]?"
-    m 3tub "Well... I think I know a way that I can relieve you of {i}that{/i} problem..."
-    m 3tta "Would like me to lend you a hand?"
+    m 1tua "哦？原来是这样吗，[player]？"
+    m 3tub "那么...我知道一个好方法可以让你{i}放松{/i}下来..."
+    m 3tta "我来给你搭把手吧？"
 
     $ _history_list.pop()
     menu:
-        m "Would like me to lend you a hand?{fast}"
+        m "我来给你搭把手吧？{fast}"
 
-        "Yes.":
+        "好的":
             $ store.persistent._nsfw_sext_hot_start = True # Might change this in the future if we make Monika's horny level change depending on other events. Making this an IF statement rather than forcing her to be horny.
-            m 4tublb "Okay, I want you to follow my lead."
-            m 5tublb "Just talk as naughty to me as you like, and enjoy yourself, [mas_get_player_nickname()]~"
+            m 4tublb "哼哼，那么现在听从我的指示。"
+            m 5tublb "把你积攒已久的欲望全部对着我发泄出来，好好享受吧[mas_get_player_nickname()]~"
 
             call nsfw_sexting_init
 
-        "No.":
-            m 3eka "That's okay, [player]."
-            m 1hua "I'll always be here if you need me~"
+        "不用":
+            m 3eka "没关系，[player]。"
+            m 1hua "如果你需要我的帮助，我会一直在这里等着你~"
     return

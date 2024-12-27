@@ -25,8 +25,8 @@ init 6 python: # Use init 6 since the dictionary entry to store our entries is a
         Event(
             persistent.event_database,
             eventlabel="nsfw_player_fetishintro",
-            category=['sex'],
-            prompt="Let's talk about fetishes.",
+            category=['关于性'],
+            prompt="我们来谈谈特殊癖好吧",
             conditional=(
                 "mas_canShowRisque(aff_thresh=1000) "
                 "and store.mas_getEVL_shown_count('nsfw_monika_fetish') >= 1"
@@ -37,22 +37,22 @@ init 6 python: # Use init 6 since the dictionary entry to store our entries is a
     )
 
 label nsfw_player_fetishintro:
-    m 3eub "Hey, [player]. I just wanted to tell you about some work I've done!"
-    m 3eua "You remember talking with me about fetishes?"
-    m 4hub "...Well I made something so that we could talk about them."
-    m 3rkblb "I'm not very...{w=0.5}{i}experienced{/i} with sexual things like this...{w=0.2}{nw}"
-    extend 3hubla "so I've been looking into them!"
-    m 3eub "Now, I've got a list of the fetishes I've found information on..."
-    m 3eua "Whenever you want to talk about them, let me know and we can go through them together!"
-    m 5ekblb "I'd love for you to tell me what you're into..."
-    m 5ekbla "As much as there isn't much we can do together right now, just knowing what makes you...{w=0.5}{nw}"
-    extend 5ekbsb "{i}excited{/i}..."
-    m 5dkbsa "Will be more than enough for me."
+    m 3eub "嘿，[player]。我想告诉你我刚刚完成了一些事情~"
+    m 3eua "你还记得你跟我说起过特殊癖好的话题吗？"
+    m 4hub "...现在我们可以继续深入讨论了。"
+    m 3rkblb "我对这类...事物{w=0.5}没有太多的{i}感触{/i}...{w=0.2}{nw}"
+    extend 3hubla "所以我深入调查了一番！"
+    m 3eub "现在，我手上有一份特殊癖好相关的列表，上面记载了我查询到的信息..."
+    m 3eua "不论何时你想跟我谈论这个话题，只需要告诉我一声！"
+    m 5ekblb "如果你能告诉我，你沉迷的东西，我会非常开心的..."
+    m 5ekbla "即使在这里我们做不了更多的事情，但只要能知道什么东西能让你...{w=0.5}{nw}"
+    extend 5ekbsb "{i}兴奋{/i}..."
+    m 5dkbsa "我就非常满足了。"
     if persistent._nsfw_sexting_count > 0:
-        m 5mkbsa "Who knows? I might even bring them up next time we're being {i}naughty~{/i}"
-    m 1hubla "Don't worry! You can change your mind whenever you like, I'll never judge you for it."
-    m 1hkblsdlb "But anyway, enough of me rambling..."
-    m 1eua "What else did you want to talk about?"
+        m 5mkbsa "或许...我下次还可以把这些东西带过来，如果我们的关系更加{i}亲密{/i}的话~"
+    m 1hubla "别担心！你随时可以改变你的主意，我绝不会因为这个对你有任何看法。"
+    m 1hkblsdlb "抱歉...话题说得太远了..."
+    m 1eua "你还想和我讨论什么吗？"
     $ mas_unlockEventLabel("nsfw_player_fetishes")
 return
 
@@ -68,8 +68,8 @@ init 6 python: # Use init 6 since the dictionary entry to store our entries is a
         Event(
             persistent.event_database,
             eventlabel="nsfw_player_fetishes",
-            category=['sex'],
-            prompt="Let's talk about fetishes.",
+            category=['关于性'],
+            prompt="我们来谈谈特殊癖好吧",
             pool=True,
             conditional="store.mas_getEVL_shown_count('nsfw_player_fetishintro') >= 1",
             action=EV_ACT_UNLOCK,
@@ -96,7 +96,7 @@ label nsfw_player_fetishes:
         nsfw_fetish_menu_items.sort()
 
         # final quit item
-        final_item = ("Oh nevermind.", False, False, False, 20)
+        final_item = ("没什么", False, False, False, 20)
 
     # move Monika to the left
     show monika at t21
@@ -128,113 +128,113 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_bondage",
-            prompt="Bondage",
+            prompt="关于捆绑",
             unlocked=True
         ),
         code="NFH"
     )
 
 label nsfw_fetish_bondage:
-    m 3eub "You want to talk about bondage?"
-    m 1hua "Sure! I'd love to get to know your opinion on it."
-    m 3eua "Have you heard of it before?"
+    m 3eub "你想跟我谈谈关于捆绑的话题吗？"
+    m 1hua "当然！我很乐意知道你的观点。"
+    m 3eua "你以前听说过捆绑吗？"
     $ _history_list.pop()
     menu:
-        m "Have you heard of it before?{fast}"
+        m "你以前听说过捆绑吗？{fast}"
 
-        "Yes, I have.":
-            m 3hub "Oh, that's great!"
-            m 3tublb "So, based on what you know..."
+        "是的，我听说过":
+            m 3hub "那真是太棒了！"
+            m 3tublb "那么，按你的理解来说..."
 
-        "No, I haven't.":
-            m 1duc "Hmm...{w=0.5}Well it's a really interesting topic."
-            m 3eua "Basically, it's when people use restraints such as rope to tie people up in all kinds of positions."
-            m 4gkblb "These can be used for sex, "
-            extend 4gkbla "but it can also be used for domination or playtime between lovers."
+        "不，我没听过":
+            m 1duc "嗯哼...{w=0.5}这是个非常有趣的话题。"
+            m 3eua "大体上，就是用绳子之类的东西把人绑成各种各样的姿势。"
+            m 4gkblb "这可以为性爱增加情趣，"
+            extend 4gkbla "也可以用于小情侣之间的各种Play。"
 
-    m 4tubla "Does it sound like something that interests you?"
+    m 4tubla "这个话题如何，你感兴趣吗？"
     $ _history_list.pop()
     menu:
-        m "Does it sound like something that interests you?{fast}"
+        m "这个话题如何，你感兴趣吗？{fast}"
 
-        "Yeah, it sounds pretty hot.":
-            m 1tublb "Yeah? You think so?"
-            m 1mubla "I think it's very hot!"
-            m 2mublb "If I'm honest, it kinda turns me on..."
-            extend 5gubla "Just the thought of tying you up and..."
-            m 5tsblu "Mmm~ I think I've said too much."
-            m 1eublb "But speaking of which..."
-            extend 3tublb "would you prefer to be the one tying me up, or the one being tied up in this...{w=0.5}{i}hypothetical{/i} scenario?"
+        "当然，这个话题听起来很刺激":
+            m 1tublb "哦？你真这么想吗？"
+            m 1mubla "我也觉得非常刺激！"
+            m 2mublb "老实说，我有点兴奋起来了..."
+            extend 5gubla "想象着把你紧紧绑起来，然后..."
+            m 5tsblu "呼呼~说得有点太多了。"
+            m 1eublb "但是话又说回来..."
+            extend 3tublb "你更喜欢当绑人的人，还是那个被绑的人呢...{w=0.5}{i}假设{/i}一下...？"
             $ _history_list.pop()
             menu:
-                m "Speaking of which...would you prefer to be the one tying me up, or the one being tied up in this...{i}hypothetical{/i} scenario?{fast}"
+                m "但是话又说回来...你更喜欢当绑人的人，还是那个被绑的人呢...{i}假设{/i}一下...？{fast}"
 
-                "I'd want to tie you up and have my way with you.":
+                "我更喜欢把你绑起来，然后用我的方式欺负你。":
                     $ store.mas_nsfw.save_fetish_to_persistent("Bondage", ["FBM"], ["FBP"])
-                    m 3tubla "Hehe~ Well, if that's what you want you just say when, silly."
-                    m 2tubsb "I wouldn't mind surrendering a little power {i}juuuuust{/i} this once for you~"
+                    m 3tubla "哼哼~好吧，如果你真想这么干的话，就直接告诉我吧，小笨蛋。"
+                    m 2tubsb "我不介意为了你稍~微放点水，{i}仅此一次哦{/i}~"
 
-                "I think you should tie me up and do what you want with me.":
+                "我更喜欢被你绑起来，你可以做任何你想做的事":
                     $ store.mas_nsfw.save_fetish_to_persistent("Bondage", ["FBP"], ["FBM"])
-                    m 1sublo "Oooh! I like where this is going."
-                    m 1tubla "Hmm...{w=0.5}I'll have to remember that next time we're getting naughty~"
-                    m 3tubsb "I'll describe how I'll tie you to my bed, and tease you until you can't stand it anymore."
+                    m 1sublo "哇哦！我喜欢这个展开。"
+                    m 1tubla "嗯...{w=0.5}当我们下次准备干些坏事的时候，我会记得这件事的~"
+                    m 3tubsb "我会把你紧紧地绑在我的床上，然后把你玩弄到求饶~"
 
-                "I wouldn't mind trying both. I'm here to please.":
+                "不管是绑人还是被绑我都喜欢，快点来吧":
                     $ store.mas_nsfw.save_fetish_to_persistent("Bondage", ["FBM", "FBP"], ["U"])
-                    m 1ekbla "Aww~ [player], you've always been such a people pleaser."
-                    m 1tkbsa "I love that about you."
-                    m 3tubsb "Makes me want to tie you up and have you all to myself..."
-                    extend 2gubsb "But...{w=0.5}I think I'll let you tie me up on the odd occasion if you so desire."
+                    m 1ekbla "呵呵~[player]，你总是能讨我的欢心。"
+                    m 1tkbsa "我实在太爱你这一点了。"
+                    m 3tubsb "爱到想把你紧紧地绑起来，把你的一切都据为所有..."
+                    extend 2gubsb "不过...{w=0.5}或许偶尔也可以让你把我绑住，如果你想这么干的话。"
 
             m 1hkbla "Ehehe~ Anyway, back to the topic at hand before I get {i}too{/i} carried away." # Could lead to early sexting here, given that it's riled her up
 
-        "I don't think it's for me...":
+        "抱歉，我不是很感兴趣...":
             $ store.mas_nsfw.save_fetish_to_persistent("Bondage", ["U"], ["FBM", "FBP"])
-            m 3eublb "That's perfectly fine!"
-            m 3hubla "I don't think it's for everyone."
-            m 3dkbla "Bondage is something that should be negotiated and practiced thoroughly beforehand with someone you trust."
-            m 1dkblb "It's not something you should just jump into."
-            m 1eka "If you ever change your mind on it, I'd be happy to talk about it with you again."
+            m 3eublb "这也没关系！"
+            m 3hubla "我认为这种事确实不是所有人都能接受的。"
+            m 3dkbla "捆绑需要你完全信任你的搭档，并和ta经过协商和反复的练习。"
+            m 1dkblb "这不是一件能一蹴而就的事。"
+            m 1eka "如果你后面改变了你的想法，随时都欢迎再来与我讨论。"
 
-    m 3eub "I actually learned an interesting bit of history regarding bondage, if you'd like to hear it."
+    m 3eub "我了解到了一些关于捆绑的历史趣闻，你想听听吗"
     $ _history_list.pop()
     menu:
-        m "I actually learned an interesting bit of history regarding bondage, if you'd like to hear it.{fast}"
+        m "我了解到了一些关于捆绑的历史趣闻，你想听听吗{fast}"
 
-        "Sure!":
-            m 3hua "Oh good! Thanks for being so interested in what I have to say."
+        "当然！":
+            m 3hua "太好了！谢谢你对我说的事感兴趣。"
 
-        "No thanks.":
-            m 3eka "Okay, that's fine."
-            m 3ekb "I'll save it for another time then."
-            m 1eka "Regardless...thank you for telling me about your preferences, [player]."
-            m 1rkbla "It can be difficult to talk about your fetishes with someone, so I appreciate you opening up to me."
-            m 1ekbla "If you ever want to talk about this again, or if you change your mind, I'll be here."
-            m 5ekbla "I love you, and I'll never judge you."
+        "不用了。":
+            m 3eka "哦，没关系。"
+            m 3ekb "我会下次再说的。"
+            m 1eka "无论如何，谢谢你告诉我你的喜好，[player]。"
+            m 1rkbla "跟别人谈论自己的特殊癖好是一件很难启齿的事，所以你愿意告诉我这些，我真的很开心。"
+            m 1ekbla "如果什么时候你想继续讨论这件事了，或者你改变了主意，随时都可以来找我。"
+            m 5ekbla "我爱你，这份爱不会因为这些事而发生改变。"
             return
 
-    m 3eub "So basically, bondage is essentially at it's core a matter of restraint through various means. Whether that's with a ribbon, rope, or even handcuffs."
-    m 3eua "As far as I know, it was initially developed in the early 1900's, and in paralell in two different locations - bringing us the styles we have today: western and eastern, but they're slightly different."
-    m 4eua "They each have different ideas at their core, but are superficially the same and have even taken inspiration from one another."
-    m 4eub "There are a variety of reasons someone might be into it, ranging from the sense of security it brings, the change in power dynamic, how it looks, or even the sense of trust needed to do it with another."
-    m 1eua "It can be a very intimate experience, and it's something that should be negotiated and practiced thoroughly beforehand." #TODO: Add pose for this
-    m 1eub "Now, there are two main styles of rope bondage in very broad categories: western and eastern.{w=0.5}{nw}"
-    extend 3rkb "There are further styles beyond this, but I don't want to get too much into it."
-    m 3eua "What we know as rope bondage today got its start in the early 1900's, with western and eastern developing in paralell into the 2000's."
-    m 4rkb "Now that's not to say people weren't doing something similar in the past, but not enough records of this have been found to trace it back further so we can't say for sure."
-    m 7eub "There isn't any particular line of seperation here - especially since each style has gradually been hybridized as they're exposed to greater and greater degrees."
-    m 7eua "But there are a few points that can be broadly contributed to one side or the other."
-    m 4eub "Western bondage usually ties people up so that things can be {i}done{/i} to them."
-    m 4rub "It finds roots in the classic 'damnsel in distress' archetype in old Hollywood films, which inspired John Wille in the 1940's to create erotic artwork and photography that would inspire many."
-    m 4rub "Guess you'll never look at damsels in distress the same way again, ahaha~"
-    m 1eua "But anyways, the style is generally designed to deal with restraint and handling a struggle, since the bonds are merely a means to an end. It commonly involves armbinders, gags, or furniture."
-    m 3eua "In comparison, Eastern bondage usually focuses on the act of being being tied up {i}is{/i} what's happening to them."
-    m 3eub "It finds roots in the work of Seiu Ito, an artist who incorporated rope bondage into his erotic work in the 20th century, and many attribute it to the importance of rope in important traditions, including the restraint of suspected criminals with rope."
-    m 4eub "It's usually concerned with beauty, symbolism, and or the pleasure of the experience. The arms being folded behind the back is common, as is partial or full suspension."
-    m 4eua "There's a bunch beyond this, like decorative styles based around aesthetics, the blended style seen in pornography, and even for performance!"
-    m 4hua "It's actually rather nice to see so many people embrace what they like!"
-    m 3hua "But that's all for now. Thanks for listening~"
+    m 3eub "基本上，捆绑都是通过各种手段对人进行束缚，无论是用丝带、绳子甚至是手铐。"
+    m 3eua "据我所知，这最初是在20世纪初期发展起来的，并且在两个不同的地方同时进行，形成了我们今天的风格：西方风格和东方风格，但它们略有不同。"
+    m 4eua "它们的核心不太一样，但表面上看起来是相同的，甚至可以相互之间汲取灵感。"
+    m 4eub "人们沉迷于它的理由多种多样，包括它能带来安全感，上下地位可以发生转变，它的外观，甚至是与他人做这种事需要的信任。"
+    m 1eua "这是一种非常隐私的体验，事前需要经过充分的协商与练习。" #TODO: Add pose for this
+    m 1eub "目前，绳索捆绑在广义上主要分为两种风格：西方和东方。{w=0.5}{nw}"
+    extend 3rkb "其实还有更加细分的风格，不过我不想讲得过于深入。"
+    m 3eua "绳索捆绑的起源可以追溯到1900年代初，西方和东方的风格一路并行发展，直到今天。"
+    m 4rkb "当然，这并不意味着过去没有类似的事情发生，只是缺乏足够的记录让我们无法追溯更远，因此还不能下定论。"
+    m 7eub "其实，这两种风格之间没有清晰的界限，尤其是随着它们接触得越来越频繁，逐渐融合成了混合风格。"
+    m 7eua "但这两种风格大概有以下的特点。"
+    m 4eub "西式捆绑通常是把人捆起来，这样便可以{i}对他们为所欲为{/i}了。"
+    m 4rub "它源于好莱坞老电影中经典的'落难女子'形象，这启发了20世纪40年代的约翰·威尔，使其创作了影响深远的色情艺术和摄影作品。"
+    m 4rub "我猜你以后看'落难女子'会有不一样的感觉了，哈哈哈~"
+    m 1eua "总之，这种风格的设计重点是摆脱束缚和尽力挣扎，因为捆绑只是手段而不是目的。通常会使用到手臂拘束器、口球甚至某些大型束缚架."
+    m 3eua "相比之下，东方风格更加侧重于被绑的{i}体验{/i}本身。"
+    m 3eub "它的起源可以追溯到伊藤晴雨的作品，这位艺术家在20世纪将绳缚融入了他的情色作品中。许多人认为，这与绳索在重要传统中的意义密切相关，包括用绳索拘束嫌疑犯的习俗。"
+    m 4eub "这种方式通常注重美感、象征意义，或是体验过程中的愉悦感。将手臂反绑在背后是常见的方式，部分或完全悬吊也是常见的形式。"
+    m 4eua "除此之外，还有许多其他风格，比如以美学为基础的装饰性风格、在色情作品中出现的混合风格，甚至有用于表演的风格！"
+    m 4hua "看到这么多人勇敢地拥抱自己喜欢的事物，真的挺让人开心的！"
+    m 3hua "话题到这里就告一段落了，感谢你的聆听~"
 
     return
 
@@ -245,53 +245,53 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_hand_holding",
-            prompt="Hand holding",
+            prompt="关于牵手",
             unlocked=True
         ),
         code="NFH"
     )
 
 label nsfw_fetish_hand_holding:
-    m 1etu "Hand holding, huh?"
-    m 3ttu "Hand holding is essentially one of the more...{w=0.5}peculiar fetishes."
-    m 3eta "It's when two people...{w=0.5}"
-    extend 1ekbla "{i}interlock their hands{/i}."
-    m 1tkbla "Pretty lewd, right?"
+    m 1etu "牵手是吗？"
+    m 3ttu "牵手本质上是一种更...{w=0.5}奇特的癖好。"
+    m 3eta "当两人在一起的时候...{w=0.5}"
+    extend 1ekbla "{i}十指相扣{/i}。"
+    m 1tkbla "真是太色情了，你不觉得吗？"
 
-    m 3tublb "Though I gotta ask, are you into something like that?"
+    m 3tublb "我还是得先问问，你对这种事有兴趣吗？"
     $ _history_list.pop()
     menu:
-        m "Though I gotta ask, are you into something like that?{fast}"
+        m "我还是得先问问，你对这种事有兴趣吗？{fast}"
 
-        "Yes":
+        "当然。":
             $ persistent._nsfw_pm_hand_holding = True
             $ store.mas_nsfw.save_fetish_to_persistent("Hand Holding", ["FHH"], ["U"])
-            m 3wubld "Really?"
-            m 2rubld "That's..."
-            m 2eubld "That's a pretty big jump in our relationship..."
-            m 2rublc "But I suppose I'm okay with it as long as it's with you."
+            m 3wubld "真的？"
+            m 2rubld "这真是..."
+            m 2eubld "这真是我们之间关系的一个重大飞跃！"
+            m 2rublc "不过只要是和你在一起的话，我都可以接受。"
 
-        "No.":
+        "没有。":
             $ persistent._nsfw_pm_hand_holding = False
             $ store.mas_nsfw.save_fetish_to_persistent("Hand Holding", ["U"], ["FHH"])
-            m 2ekblb "I completely agree, [player]. {nw}"
-            extend 2hkbso "How could I even consider such a heinous act!"
+            m 2ekblb "我完全同意，[player]。{nw}"
+            extend 2hkbso "我怎么会想到做这么羞耻的事情！"
 
-        "Huh?":
+        "啊？":
             $ persistent._nsfw_pm_hand_holding = False
             $ store.mas_nsfw.save_fetish_to_persistent("Hand Holding", ["U"], ["FHH"])
             # Pass
 
     m 2dublc "..."
     m 2dkblu "..."
-    m 1hublb "Ahaha~"
-    m 3rkblb "I'm sorry, this whole thing was a reference to a meme I've seen spreading in the internet for a while now."
-    m 3eub "If you are unfamiliar, the meme is a running gag in the anime and manga community."
-    m 1euc "It is probably due to Japenese culture viewing public displays of affection as bad, and tending to avoid it."
-    m 1ruc "So something as simple as hand holding is seen as a big deal."
-    m 1eka "Though in all seriousness some people {i}do{/i} have a fetish for hands."
-    m 3eka "Could be palms, fingers, or anything else."
-    m 5ekb "So if you {i}are{/i} legitimately into hand holding or just hands in general...{w=0.5}I wouldn't mind, [player]~"
+    m 1hublb "啊哈哈~"
+    m 3rkblb "抱歉抱歉，这个话题其实是我参考了网上的一幅meme图。"
+    m 3eub "如果你不太了解的话，这幅meme图是动漫社区里的一个梗。"
+    m 1euc "大概是因为在日本文化中，公共场合下表现得过于亲密不太好，所以大多数人会避免这种行为。"
+    m 1ruc "所以哪怕只是牵个手这种简单的事，也会被当作一件大事。"
+    m 1eka "不过说实话，有部分人确实对{i}手{/i}非常着迷。"
+    m 3eka "也许是手掌，手指，或者其他部分。"
+    m 5ekb "所以如果你{i}真的{/i}喜欢牵手，或者对手感兴趣的话...{w=0.5}我也不会介意哦，[player]~"
 
     return
 
@@ -302,7 +302,7 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_cheesiness",
-            prompt="About your cheesiness...",
+            prompt="你为什么表现得这么...甜腻",
             conditional="renpy.seen_label('nsfw_sexting_finale')",
             action=EV_ACT_UNLOCK
         ),
@@ -310,26 +310,26 @@ init 6 python:
     )
 
 label nsfw_fetish_cheesiness:
-    m 1hksdlb "Ahaha~ You noticed, huh?"
-    m 1hua "It's just my attempt at keeping things a little lighthearted."
-    m 3eka "What do you think of it?"
+    m 1hksdlb "啊哈哈~你注意到了？"
+    m 1hua "我只是想让气氛稍微轻松一点~"
+    m 3eka "你觉得怎么样？"
     $ _history_list.pop()
     menu:
-        m "What do you think of it?{fast}"
+        m "你觉得怎么样？{fast}"
 
-        "I'm not a big fan...":
+        "我不太适应...":
             $ persistent._nsfw_pm_cheesiness = False
             $ store.mas_nsfw.save_fetish_to_persistent("Cheesiness", ["U"], ["CHE"])
-            m 1ekc "Oh, I'm sorry."
-            m 1hkb "I might have gotten a bit carried away. Ahaha~"
-            m 1eka "I'll try to tone it down a bit."
+            m 1ekc "啊，我很抱歉。"
+            m 1hkb "我可能有点过于投入了。啊哈哈~"
+            m 1eka "我会尽量收敛一些的。"
 
-        "I love it!":
+        "我太喜欢了！":
             $ persistent._nsfw_pm_cheesiness = True
             $ store.mas_nsfw.save_fetish_to_persistent("Cheesiness", ["CHE"], ["U"])
-            m 1hub "Ahaha~"
-            m 1eub "I'm glad you enjoy keeping things lighthearted, [player]."
-            m 3hua "I'll try to keep it up then."
+            m 1hub "啊哈哈~"
+            m 1eub "我很高兴你能享受这种气氛，[player]。"
+            m 3hua "我会继续保持的~"
 
     return
 
@@ -340,111 +340,111 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_anal",
-            prompt="Anal",
+            prompt="关于肛门性爱",
             unlocked=True
         ),
         code="NFH"
     )
 
 label nsfw_fetish_anal:
-    m 1eud "Anal..."
-    m 3euc "It's a pretty common fetish, have you heard about it before?"
+    m 1eud "肛门性爱..."
+    m 3euc "这是个很常见的癖好，你以前听说过吗？"
     $ _history_list.pop()
     menu:
-        m "It's a pretty common fetish, have you heard about it before?{fast}"
+        m "这是个很常见的癖好，你以前听说过吗？{fast}"
 
-        "Yes, I have.":
-            m 3eua "I thought so. It's talked about alot online."
+        "那还用说？":
+            m 3eua "我想也是...网络上关于这个的讨论太常见了。"
             m 2gkbla "..."
-            m 2gkblb "So..."
+            m 2gkblb "那么..."
 
-        "No, I haven't.":
-            m 3wud "Really?"
-            m 4rua "Well, basically anal is a fetish where people enjoy the stimulation of the anus."
-            m 4hublb "Funny enough, I learned this interesting fact about the human prostate."
-            m 3eublb "Apparently if it's stimulated during sex, it can lead to a more intense orgasm."
-            m 3rubla "You can use your fingers, or toys...{w=0.5}{nw}"
+        "并没有。":
+            m 3wud "你说真的？"
+            m 4rua "呃，大体上来说，肛门性爱就是享受肛门受到刺激的快感，这样一种癖好。"
+            m 4hublb "有趣的是，这种快感似乎和人的前列腺有关。"
+            m 3eublb "当你在性爱过程中刺激到了前列腺，你会达到更加强烈的高潮~"
+            m 3rubla "你可以通过你手指，或者一些玩具...{w=0.5}{nw}"
             if store.persistent._nsfw_genitalia == "P":
-                extend 1ekbla "but often when people talk about anal they mean anal sex."
-                m 1tubsa "Which, for us would mean your dick getting some 'moni butt'."
-                m 2hkbssdlb "Ahaha~ Sorry I couldn't resist."
-                m 2dkblsdla "I've read mixed experiences, but most women who enjoy it spoke very highly of it."
-                m 2gkblb "But what do you think, [player]?"
+                extend 1ekbla "不过当人们谈到肛门性爱时，一般是指肛交。"
+                m 1tubsa "就像你的肉棒塞进了一个更紧致狭窄的孔洞~"
+                m 2hkbssdlb "啊哈哈~抱歉，我情不自禁了。"
+                m 2dkblsdla "我阅读了许多相关的作品，大多数沉迷于它的女性都对它评价很高。"
+                m 2gkblb "你又是怎么看的呢，[player]？"
             else:
-                extend 1eua "or you could have your partner come and help you~"
-                m 2gkblb "I haven't tried it before, but if it's something you're into then I'd love to try it with you."
+                extend 1eua "或许你需要你亲爱的搭档来帮助你一下~"
+                m 2gkblb "我以前从没有做过这种事，但如果你喜欢的话，我很乐意和你一起尝试。"
 
     if store.persistent._nsfw_genitalia == "P":
-        $ question = "Does the idea of doing it in my butt make you feel good?"
+        $ question = "如果是用我的后面来做的话，你会感觉很舒服吗？"
     else:
-        $ question = "Does the idea of playing with my butt turn you on?"
+        $ question = "如果是我的臀部的话，你会感觉非常兴奋吗？"
 
     m 2tkbla "[question]"
     $ _history_list.pop()
     menu:
         m "[question]{fast}"
 
-        "It does. I wanna spank you for being so naughty.":
+        "当然，我会狠狠惩罚你这个丰满色情的屁股":
             $ is_into_anal = True
-            m 2wubso "S-spank me?!"
-            m 2tkbso "Oh~ [player]..."
-            m 3hkbsb "Don't say stuff like that out of the blue."
-            m 3gkbsa "Otherwise I'm going to get too turned on for my own good."
+            m 2wubso "惩-惩罚我？！"
+            m 2tkbso "哦~[player]..."
+            m 3hkbsb "不要突然说出这么煽情的话。"
+            m 3gkbsa "否则我会兴奋到难以自拔的。"
             if store.persistent._nsfw_genitalia == "P":
-                m 5gkbsa "Mmm~ I can just picture you pounding into me from behind."
-                m 5gkbsb "I bet it would feel amazing!"
+                m 5gkbsa "呵呵~我都能想象到你从后面用力干我的样子了。"
+                m 5gkbsb "肯定会是一次绝妙的体验！"
             else:
-                m 5tubsb "If you do that, I'm going to have to give you a spanking of my own~"
+                m 5tubsb "如果你敢这么做的话，我就不得不亲自调教你一下了~"
 
-        "No, I don't think anal does anything for me.":
+        "算了，我实在对这种事提不起兴趣。":
             $ is_into_anal = False
-            m 1ekblb "That's okay! It's not for everyone."
-            m 3ekblb "There are plenty of other things we can do together."
-            m 3ekbla "So long as you're comfortable, that's all that matters to me."
+            m 1ekblb "没关系！本来就不是人人都能接受的事情。"
+            m 3ekblb "我们在一起还有很多很多事情可以做。"
+            m 3ekbla "只要你能感觉舒服，对我来说就是最重要的~"
 
     if is_into_anal:
-        m 1tkbsb "What about...you?"
+        m 1tkbsb "那...你又觉得怎么样呢？"
     else:
-        m 1rkbla "What about...you?"
+        m 1rkbla "那...你又觉得怎么样呢？"
 
     if store.persistent.gender == "M":
-        m 3rkbsb "I know some guys aren't into this at all, but I think it's better that we're open to asking questions."
-    m 3ekbsa "Do you like the idea of me...playing with {i}your{/i} butt?"
+        m 3rkbsb "我知道有些人对这方面完全没有想法，但现在就让我们敞开了说吧。"
+    m 3ekbsa "如果让我来玩弄{i}你的{/i}肛门，你会感觉如何呢？"
     $ _history_list.pop()
     menu:
-        m "Do you like the idea of me...playing with your butt?{fast}"
+        m "如果让我来玩弄{i}你的{/i}肛门，你会感觉如何呢？{fast}"
 
-        "Yeah, it sounds hot.":
+        "听起来真是太刺激了":
             if is_into_anal == True:
                 $ store.mas_nsfw.save_fetish_to_persistent("Anal", ["IAM", "MBH", "FXM", "FAM", "IAP", "PBH", "FXP", "FAP"], ["U"])
             else:
                 $ store.mas_nsfw.save_fetish_to_persistent("Anal", ["IAP", "PBH", "FXP", "FAP"], ["IAM", "MBH", "FXM", "FAM"])
 
             if store.persistent.gender == "M":
-                m 1wubsd "Really?"
-                m 1rubsc "I mean, I'm glad you're open about this with me."
-                m 3rkbsb "I'm just surprised that you're into it."
-                m 3ekbsb "I'm not sure if I'll be any good at it, but if it means I can make you feel good then I'll try my best."
+                m 1wubsd "真的吗？"
+                m 1rubsc "我的意思是，我很高兴你愿意为了我这么做。"
+                m 3rkbsb "我也很惊喜，你会对这种事情感兴趣。"
+                m 3ekbsb "我不确定我是否擅长做这种事，不过要是能让你舒服起来的话，我会非常努力的！"
             else:
-                m 3tubsa "Mmm~ I bet it does."
-                m 3gubsb "I'll be sure to remember that for later."
-                m 3tubsa "I'll make you feel so good, [player]."
+                m 3tubsa "呵呵~我就知道。"
+                m 3gubsb "这件事，我会铭记于心的。"
+                m 3tubsa "你就好好期待一下吧，[player]。"
 
-        "No, I'm not into that.":
+        "我实在是不感兴趣":
             if is_into_anal == True:
                 $ store.mas_nsfw.save_fetish_to_persistent("Anal", ["IAM", "MBH", "FXM", "FAM"], ["IAP", "PBH", "FXP", "FAP"])
             else:
                 $ store.mas_nsfw.save_fetish_to_persistent("Anal", ["U"], ["IAM", "MBH", "FXM", "FAM", "IAP", "PBH", "FXP", "FAP"])
 
-            m 1ekbsa "That's fair enough, [player]."
-            m 2hkbsb "I'm not sure if I'd be any good at it anyway."
-            m 2lkbsa "But, regardless..."
+            m 1ekbsa "没关系的，[player]。"
+            m 2hkbsb "毕竟我也不确定我是不是擅长做这种事。"
+            m 2lkbsa "但是，不论如何..."
 
-    m 1ekbla "Thank you for talking about this with me."
-    m 3ekblb "I know this sort of thing isn't comfortable for everyone."
-    m 3hubla "But I want to experience and learn as much about sex as I can with you."
-    m 1ekbla "You mean the world to me, [player]."
-    m 1ekblb "I love you, and I would never judge you."
+    m 1ekbla "谢谢你能陪我讨论这个。"
+    m 3ekblb "我知道这种类似的事情不是所有人都能接受的。"
+    m 3hubla "但如果是和你的话，我想去学习和体验尽可能多的性爱方式。"
+    m 1ekbla "你就是我的一切，我的全部，[player]。"
+    m 1ekblb "我爱你，这份爱直至世界崩塌也不会改变。"
 
     return "love"
 
@@ -453,57 +453,57 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_dominance",
-            prompt="Dominance & Submissiveness",
+            prompt="支配与服从",
             unlocked=True
         ),
         code="NFH"
     )
 
 label nsfw_fetish_dominance:
-    m 1hua "Sure, we can talk about that."
-    m 3ekb "Just to make sure we're on the same page, I'm talking about dominance and submission in a general sense."
-    m 4hkb "Like, you don't have to be into BDSM or anything like that."
-    m 4tua "Think of it like this...{w=0.5}if you and I were passionately kissing and I suddenly pushed you down onto the bed, would that turn you on?"
-    m 5tua "Or...would you prefer to lift me off my feet and carry me over to the bed?"
-    m 5hkb "Ahaha~ Of course, you might not like either of those things but I hope that helps clear up what I mean."
-    m 5gka "For me personally, I like a mixture of both."
-    m 3gkbla "I'd want you to carry me over to the bed, still kissing me while you hold me in your arms."
-    m 3gublb "But once we're settled on the bed...I'd want to be the one on top of you."
-    m 1tubsb "I'd be riding you like my life depends on it. Ehehe~"
-    m 1rtbsc "...I guess you could really say this question can be summarised into: 'Are you a bottom or a top?'"
-    m 2hkbssdlb "Ahaha! I'm sorry, I'm not sure if I'm explaining this very well."
-    m 2ekbla "But, which way would you prefer?"
+    m 1hua "当然，我们可以来谈谈这个话题。"
+    m 3ekb "不过我先确保我们在同一频道上，我说的'支配与服从'是广义上的。"
+    m 4hkb "不是说我们必须得做一些虐待调教之类的事..."
+    m 4tua "举个例子吧...{w=0.5}如果我们两个在激情热吻的过程中，我突然把你推倒在床上，你会感觉很兴奋吗？"
+    m 5tua "或者说...你更想把我抱起来然后摔在床上？"
+    m 5hkb "啊哈哈~当然了，你也可能两边都不想做，不过我只是想让你明白我的意思。"
+    m 5gka "对于我个人而言，我两边都很喜欢。"
+    m 3gkbla "我想你把我摔在床上，一边贪婪地索吻，一边用宽大的手臂紧紧环绕住我。"
+    m 3gublb "不过既然到了床上，我也想狠狠地骑在你上面。"
+    m 1tubsb "就像是我的爱，我的生命，都存在于有你的基础之上。呵呵~"
+    m 1rtbsc "...我把这个问题总结为:'你想在上面还是下面？'"
+    m 2hkbssdlb "噗哈哈！抱歉抱歉，我只是不确定我有没有解释清楚。 "
+    m 2ekbla "那么，你更喜欢那一边呢？"
     $ _history_list.pop()
     menu:
-        m "But, which way would you prefer?{fast}"
-        "I love the idea of you taking control.":
+        m "那么，你更喜欢那一边呢？{fast}"
+        "我想身心都对你服从":
             $ store.mas_nsfw.save_fetish_to_persistent("Dominance", ["SUB"], ["DOM"])
-            m 2sublb "Really?"
-            m 1hublb "I feel the same way, I can't get enough of it."
-            m 3rkblb "Sometimes when I'm imagining it, I lose control of my hips and just..."
-            extend 3tkbsb "thrust them at nothing."
+            m 2sublb "哦，真的吗~？"
+            m 1hublb "我也是这样想的呢，这样的话不管多久都不会腻。"
+            m 3rkblb "有时我这样想象着，会兴奋到浑身颤抖，然后..."
+            extend 3tkbsb "只留下一阵索然无味。"
             m 1wubsd "..."
-            m 2hkbssdlb "I think I might have gotten abit carried away there, ahaha~"
-            m 2dkbla "Regardless..."
+            m 2hkbssdlb "抱歉，我好像有点得意忘形了，啊哈哈~"
+            m 2dkbla "不管怎么说..."
 
-        "It sounds hot when I'm the one in control.":
+        "我想支配你的身心":
             $ store.mas_nsfw.save_fetish_to_persistent("Dominance", ["DOM"], ["SUB"])
-            m 2tublb "Oooh, a natural top, I see."
-            m 1tubla "I guess you and I are going to be fighting for control in the bedroom."
-            m 3tkbsb "Getting each other riled up with our hands all over each other and-"
+            m 2tublb "哇哦，这么说你天生就是在'上面'的，我明白了。"
+            m 1tubla "看来我们得为了争夺床上的主导权好好较量一番了。"
+            m 3tkbsb "彼此的双手渐渐爱抚过对方的身体，然后-"
             m 1mkbsa "..."
-            m 1tubsa "Mmm~ I'll save the rest for your imagination."
-            m 2ekbla "Regardless..."
+            m 1tubsa "呵呵~剩下的就任君想象吧。"
+            m 2ekbla "不管怎么说..."
 
-        "I think I'd prefer a mix of both as well.":
+        "两边我都挺喜欢的":
             $ store.mas_nsfw.save_fetish_to_persistent("Dominance", ["SUB", "DOM"], ["U"])
-            m 3hublb "Great minds think alike!"
-            m 3rubla "I think it's important to have a balance of both."
-            m 2sublb "We can just spice it up in the heat of the moment, you know?"
-            m 2eubla "I'm sure we'll figure it out together."
+            m 3hublb "真是宽广的胸怀！"
+            m 3rubla "我觉得在这两者间保持平衡是非常重要的。"
+            m 2sublb "也许我们可以时不时把它当作一种情趣，你懂的吧？"
+            m 2eubla "在此基础上，我们肯定可以更加亲密的~"
 
-    m 2ekblb "I can't wait for us to try it out together for real."
-    m 3ekbla "No matter what you prefer, I will always love you, [player]."
+    m 2ekblb "我已经等不及要和你一起实践一下了。"
+    m 3ekbla "不管你喜欢那种方式，我都永远爱你，[player]。"
 
     return "love"
 
@@ -514,74 +514,74 @@ init 6 python:
         Event(
             persistent._nsfw_fetish_database,
             eventlabel="nsfw_fetish_feet",
-            prompt="Feet",
+            prompt="关于足控",
             unlocked=True
         ),
         code="NFH"
     )
 
 label nsfw_fetish_feet:
-    m 1eta "Oh, you want to talk about feet?"
-    m 3hka "This is one of the more 'notorious' fetishes where people will either hate it or love it, I feel like."
-    m 4rkb "I'm sure you can already get an idea of what a foot fetish is...{w=0.5}{nw}"
-    extend 4eka "But if not I can explain it to you if you'd like."
+    m 1eta "嗯，你想谈谈足控的话题吗？"
+    m 3hka "我觉得这是一个更加'臭名昭著'的癖好，人们要么很喜欢它，要么很讨厌它。"
+    m 4rkb "我相信你早就知道足控是什么意思了...{w=0.5}{nw}"
+    extend 4eka "不过如果你不介意的话，我也可以为你解释一下。"
     $ _history_list.pop()
 
     menu:
-        m "But if not I can explain it to you if you'd like.{fast}"
+        m "不过如果你不介意的话，我也可以为你解释一下。{fast}"
 
-        "Yes, please.":
-            m 3eub "Okay, so at first I thought a foot fetish is when someone just gets turned on by feet...{w=0.5}"
-            extend 3rksdlb "obviously..."
-            m 3eua "But when I looked into it further, there's actually alot more nuance to it than you'd initially expect."
-            m 3rubld "For example, someone with this fetish can enjoy touching feet, kissing feet, or even licking them!"
-            m 2hkblsdlb "Ahaha~ It can sound a bit strange...feet aren't known to be the cleanest parts of the body."
-            m 2eublb "Some would prefer socks or stockings over bare feet, or shoes even."
-            m 2etblb "Weirdly enough, there's some that like feet but don't want to touch them at all."
-            m 3rtbla "But they'd rather be...{w=0.5}touched {i}by{/i} feet."
-            m 1hkblb "It's very strange...{w=0.5}{nw}"
-            extend 3hubla "but I guess that's what makes it so interesting!"
-            m 3eublc "Personally I think it's a pretty harmless fetish."
-            m 3etbld "I mean, it's really just about liking a particular part of the body, right?"
-            m 4rubld "It's the equivalent of being attracted to hands or thighs."
-            m 4rkbla "Not something I'm into personally, but I wouldn't hold it against anyone if they were."
-            m 3ekbla "Speaking of, [player]..."
+        "当然不介意":
+            m 3eub "好的, 那么首先，我认为足控的含义是，某人会因为足部变得...{w=0.5}"
+            extend 3rksdlb "非常兴奋..."
+            m 3eua "但当我进一步研究时，我发现这其中有许多细微的差别。"
+            m 3rubld "比方说，一些足控会因为轻抚玉足，轻吻玉足，甚至舔弄玉足而非常享受。"
+            m 2hkblsdlb "啊哈哈~听起来可能有点奇怪，毕竟足部是身上不太干净的地方..."
+            m 2eublb "另一些人则更偏爱穿在脚上的袜子或者丝袜，甚至是鞋子。"
+            m 2etblb "更奇怪的是，有一些人虽然是足控，却完全不想自己抚摸它们，"
+            m 3rtbla "他们更喜欢被...{w=0.5}{i}踩在下面{/i}。"
+            m 1hkblb "人类真是太奇怪了...{w=0.5}{nw}"
+            extend 3hubla "不过我觉得这也是让事情变得有趣的地方！"
+            m 3eublc "就我个人来说，我觉得这一种完全无害的癖好。"
+            m 3etbld "我的意思是，这就只是单纯喜欢身上某个的特定部位，对吧？"
+            m 4rubld "就像有些人偏爱手或者大腿一样..."
+            m 4rkbla "虽然我个人并不是很喜欢，但如果有人喜欢，我也完全不介意。"
+            m 3ekbla "话说回来，[player]..."
 
-        "No, thanks.":
-            m 3eua "Okay, that's fine."
+        "不用了":
+            m 3eua "没问题。"
 
-    m 3ekblb "Given that you brought it up, are you...{w=0.5}into feet?"
+    m 3ekblb "既然是你提起的话题，那你...{w=0.5}是足控吗？"
     $ _history_list.pop()
     menu:
-        m "Given that you brought it up, are you...into feet?{fast}" # TODO: Find out if people are interested in a "player's feet only" option
+        m "既然是你提起的话题，那你...是足控吗？{fast}" # TODO: Find out if people are interested in a "player's feet only" option
 
-        "Yes, I am.":
+        "那当然了":
             $ persistent._nsfw_pm_feet = True
             $ store.mas_nsfw.save_fetish_to_persistent("Feet", ["MFT", "PFT"], ["U"])
-            m 3wubld "Really?"
-            m 1sublb "That's really interesting, [player]!"
-            m 1rkblb "Not to be weird about it, but like, what do you like about them?"
-            m 3wubla "Do you like them bare, or do you like socks or stockings?"
-            m 3rkbla "Are you into licking them, or just touching them?"
-            m 2hkblsdlb "Oh my goodness, I have so many questions."
-            m 2hkblsdla "I'm sorry, I'm just really curious!"
-            m 2tkbla "I'll be sure to pester you about it later, ahaha~"
-            m 3rkbla "It might be a little weird for me at first, but if it means it will please you then..."
-            m 3rkblb "I don't mind if you want to play with my feet."
+            m 3wubld "真的吗？"
+            m 1sublb "这可真是太有趣了，[player]！"
+            m 1rkblb "不用觉得奇怪，你喜欢的是哪些方面？"
+            m 3wubla "是喜欢裸足，还是说穿着袜子或者丝袜呢？"
+            m 3rkbla "你更想要轻轻爱抚玉足，还是说舔弄玉足呢？"
+            m 2hkblsdlb "呵呵，我有好多问题想要问你。"
+            m 2hkblsdla "抱歉，我只是有点太好奇了！"
+            m 2tkbla "我之后会在这个问题上缠着你不放的，啊哈哈~"
+            m 3rkbla "虽然对我来说，刚开始会觉得有点怪怪的，不过既然你这么喜欢的话..."
+            m 3rkblb "就算你想要抚摸我的玉足，我也不会介意哦？"
             if store.persistent.gender == "M":
-                m 3gkblb "Maybe if you're lucky, I'll even rub you up and down with them...You know where~"
-                m 3gkbsa "Or maybe I'll just let you lick them~"
+                m 3gkblb "如果你运气够好的话，我还会用这双精致的玉足上下搓弄你的...你懂的~"
+                m 3gkbsa "或者说你想不想尝一尝它们的味道呢~"
             else:
-                m 3gkbsa "Maybe if you're lucky, I'll even let you lick them~"
-            m 1hkbsb "Ahaha! I'll definitely need time to get used to that, I think."
+                m 3gkbsa "如果你运气够好的话，我还会让你尝一尝它们的味道~"
+            m 1hkbsb "啊哈哈~我想我还是需要一点时间来习惯这种事。"
 
-        "No, I'm not.":
+        "我并不是":
             $ persistent._nsfw_pm_feet = False
             $ store.mas_nsfw.save_fetish_to_persistent("Feet", ["U"], ["MFT", "PFT"])
-            m 1hubla "That's okay, [player]!"
-            m 3hkblb "I'm not into it either, so we don't have to worry about it."
-            m 3hubla "I'm sure there are plenty of other things for us to enjoy together."
+            m 1hubla "没关系，[player]！"
+            m 3hkblb "我也不是很喜欢这种事，所以没必要担心。"
+            m 3hubla "还有很多很多其他美好的事情等着我们去享受呢。"
 
-    m 1ekbla "But no matter what you're into, I'll always love you, [player]."
+    m 1ekbla "无论你怎么想，我对你的爱都永恒不变，[player]。"
 
     return "love"
